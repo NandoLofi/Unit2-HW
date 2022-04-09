@@ -11,6 +11,13 @@ app.get("/drinks", (req, res) => {
     res.render('drinks_index.ejs', {drinks: drinks})
 })
 
+app.get('/drinks/:id', (req, res) => {
+    res.send(req.params.id)
+})
+
+
+
+
 
 app.listen(PORT, (req, res) => {
     console.log("Welcome to the Github App")
