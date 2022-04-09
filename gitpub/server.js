@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000
-const database = require('./models/drinks')
+const drinks = require('./models/drinks')
 
 app.get('/', (req, res) => {
     res.send("You are on home server")
 })
 
-app.get("/drinks/", (req, res) => {
-    res.send(database)
+app.get("/drinks", (req, res) => {
+    res.render('drinks_index.ejs')
 })
 
 
