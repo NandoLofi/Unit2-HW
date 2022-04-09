@@ -8,6 +8,18 @@
 </head>
 <body>
     <h1>Welcome to GitPub</h1>
+    <ul>
+        <% for(let drink in drinks) { %>
+            <li>
+                <a href="/drinks/<%=drink%>"> <%=drinks[drink].name.charAt().toUpperCase()%><%=drinks[drink].name.slice(1)%></a>
+            </li>
+                
+        
+        
+        <% } %>
+
+    </ul>
+
 
     <style>
         body {
