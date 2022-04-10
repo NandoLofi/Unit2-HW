@@ -8,19 +8,14 @@
 </head>
 <body>
     <h1>At FooBar</h1>
-    <ul>
-        <% for(let drink in drinks) { %>
-            <li>
-                <a href="/drinks/<%=drink%>"> <%=drinks[drink].name.charAt().toUpperCase()%><%=drinks[drink].name.slice(1)%></a>
-            </li>
-                
-        
-        
-        <% } %>
-
-    </ul>
-
-
+        <h2> 
+            <%=drinks.name %> 
+            <a href="<%=drinks.image%>"></a>
+        </h2>
+        <h3>
+            <%=drinks.price%>
+        </h3>
+        <a href="/drinks">Back to Menu</a>
     <style>
         body {
             background-color: lavender;
