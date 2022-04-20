@@ -7,14 +7,14 @@ const budget = require("./models/budget")
 
 //middleware
 app.use(express.urlencoded({extended: false}));
-app.use('/static', express.static('public'));
+app.use('/public', express.static('public'));
 
 app.get('/', (req, res) => {
     res.send('You are home')
 })
 //index route
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs', budget)
+    res.render('index.ejs')
 })
 app.get('/budgets/:index', (req, res) => {
     res.send()
