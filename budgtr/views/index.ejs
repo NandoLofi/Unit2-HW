@@ -10,7 +10,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello Adult Life</h1>
+        <h1>Budgtr</h1>
+    <nav>
+        <a href="/budgets/new"><button>Add New Budget Item</button></a>
+    </nav>
+        <table>
+            <tr>
+            <% for (let item in budgetItem) { %> 
+            <td><%=budgetItem[item].date%></td>
+            <td>
+            <a href="/budgets/<%=item%>"><%=budgetItem[item].name%></a>
+            <td><%=budgetItem[item].amount%></td>
+            </td>
+            </tr>
+            <% } %> 
+        </table>
     </div>
+    <button href="/">Show Detail</button>
 </body>
 </html>

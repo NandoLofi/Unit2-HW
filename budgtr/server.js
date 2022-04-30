@@ -3,6 +3,7 @@ const express = require('express')
 const app = express();
 const PORT = process.env.PORT
 const budget = require("./models/budget")
+const bodyParser = require('body-parser')
 
 
 //middleware
@@ -14,14 +15,22 @@ app.get('/', (req, res) => {
 })
 //index route
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs')
-})
+    res.render('index.ejs', {budgetItem: budget});
+});
+//show route
 app.get('/budgets/:index', (req, res) => {
-    res.send()
+    res.render('show.ejs', {allBudget: budget[req.params.index]})
 })
+
+//new route
 app.get('/budgets/new', (req, res) => {
-    res.send()
+    res.render('new.ejs')
 })
+app.post('/budgets/new', (req, res) =>{
+    budget.push(req.body);
+    res.redirect('/budgets')
+})
+
 
 
 
