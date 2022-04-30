@@ -17,15 +17,16 @@ app.get('/', (req, res) => {
 app.get('/budgets', (req, res) => {
     res.render('index.ejs', {budgetItem: budget});
 });
+//new route
+app.get('/budgets/new', (req, res) => {
+    res.render('new.ejs')
+})
 //show route
 app.get('/budgets/:index', (req, res) => {
     res.render('show.ejs', {allBudget: budget[req.params.index]})
 })
 
-//new route
-app.get('/budgets/new', (req, res) => {
-    res.render('new.ejs')
-})
+
 app.post('/budgets/new', (req, res) =>{
     budget.push(req.body);
     res.redirect('/budgets')
